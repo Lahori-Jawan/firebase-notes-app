@@ -43,7 +43,7 @@
               class="bookmark color absolute flex justify-center items-center right-0 mr-1 w-4 h-4"
             ></div>
             <div class="info flex flex-col">
-              <span class="date title-2">{{ date.getDate() }}</span>
+              <span class="date title-2 text-center">{{ date.getDate() }}</span>
               <span class="month">{{ date.getMonth() }}</span>
             </div>
             <div class="flex flex-col justify-center pl-3 content">
