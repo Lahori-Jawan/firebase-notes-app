@@ -1,14 +1,12 @@
 <template>
   <div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-indigo">
     <div
-      @click="open = false"
       class="absolute flex flex-col w-full h-full md:w-64 text-gray-700 dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0 sidebar-bg"
     >
       <p class="text-white text-bold text-center mt-20 title-1">nk</p>
       <p class="text-center mt-10">
         <button
           class="rounded-lg hover:border-transparent hover:text-red-500 focus:outline-none focus:shadow-lg text-white w-20 h-20 transition duration-500 title-1 outline-blue"
-          @click="open = !open"
         >
           +
         </button>
@@ -57,7 +55,6 @@
 export default {
   data() {
     return {
-      open: true,
       date: new Date()
     };
   }
