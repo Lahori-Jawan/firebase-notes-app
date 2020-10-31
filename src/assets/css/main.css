@@ -90,3 +90,7 @@
 .content > div {
   max-width: 95%;
 }
+
+.hide {
+  visibility: hidden;
+}

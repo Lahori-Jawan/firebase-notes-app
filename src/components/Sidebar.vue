@@ -20,7 +20,7 @@
           :key="note.id"
         >
           <input
-            class="w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-16"
+            class="absolute w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-16"
             id="username"
             type="text"
             placeholder="Username"
@@ -28,7 +28,11 @@
             @keypress.enter="editing = 0"
             v-model="note.title"
           />
-          <div class="flex content pl-4" @dblclick="editing = note.id">
+          <div
+            class="flex content pl-4"
+            :class="{ hide: editing }"
+            @dblclick="editing = note.id"
+          >
             <button
               class="close-btn absolute flex justify-center items-center focus:outline-none right-0 mt-5 mr-1 w-5 h-5"
               @click="removeNote(note.id)"
