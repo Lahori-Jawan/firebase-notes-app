@@ -54,7 +54,7 @@ export default {
       });
     },
     removeNote(id) {
-      const noteId = id || this.editing;
+      const noteId = typeof id === 'string' ? id : this.editing;
       const index = this.notes.findIndex(note => note.id == noteId);
       this.notes.splice(index, 1);
       this.editing = 0;

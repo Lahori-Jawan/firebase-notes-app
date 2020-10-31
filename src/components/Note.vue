@@ -11,7 +11,7 @@
     />
     <div
       class="flex content pl-4"
-      :class="{ hide: editing == note.id }"
+      :class="{ hide: editing === note.id }"
       @dblclick="$emit('editing', note.id)"
     >
       <button
