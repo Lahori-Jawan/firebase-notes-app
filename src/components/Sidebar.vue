@@ -29,6 +29,7 @@
           <div class="flex content pl-4" v-show="!editing">
             <button
               class="close-btn absolute flex justify-center items-center focus:outline-none right-0 mt-5 mr-1 w-5 h-5"
+              @click="removeNote(note.id)"
             >
               <svg
                 aria-hidden="true"
@@ -49,6 +50,7 @@
             <div
               class="bookmark color absolute flex justify-center items-center right-0 mr-1 w-4 h-4"
               :class="{ active: note.bookmark }"
+              @click="note.bookmark = !note.bookmark"
             ></div>
             <div class="info flex flex-col">
               <span class="date title-2">{{ note.date }}</span>
@@ -66,6 +68,7 @@
 </template>
 
 <script>
+import shortid from 'shortid';
 export default {
   data() {
     return {
@@ -78,13 +81,17 @@ export default {
     addNote() {
       console.log('add');
       this.notes.push({
-        id: this.notes.length,
+        id: shortid.generate(),
         title: 'My Awesome Title',
         content: 'Double click to edit',
         bookmark: false,
         date: this.date.getDate(),
         month: 'October'
       });
+    },
+    removeNote(id) {
+      const index = this.notes.findIndex(note => note.id == id);
+      this.notes.splice(index, 1);
     }
   }
 };
