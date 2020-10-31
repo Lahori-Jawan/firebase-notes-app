@@ -24,9 +24,14 @@
             id="username"
             type="text"
             placeholder="Username"
-            v-show="editing"
+            v-show="editing == note.id"
+            @keypress.enter="editing = 0"
           />
-          <div class="flex content pl-4" v-show="!editing">
+          <div
+            class="flex content pl-4"
+            @dblclick="editing = note.id"
+            v-show="!editing"
+          >
             <button
               class="close-btn absolute flex justify-center items-center focus:outline-none right-0 mt-5 mr-1 w-5 h-5"
               @click="removeNote(note.id)"
