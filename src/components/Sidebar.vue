@@ -12,7 +12,7 @@
         </button>
       </p>
       <div class="notes-list mt-2">
-        <div class="preview pt-3 text-white flex justify-start relative">
+        <div class="preview pt-3 text-white flex flex-col relative">
           <input
             class="w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-16"
             id="username"
