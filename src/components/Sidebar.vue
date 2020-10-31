@@ -14,8 +14,8 @@
         </button>
       </p>
       <div class="notes-list mt-2">
-        <div class="preview pt-3 text-white flex justify-start">
-          <div class="flex content pl-4 relative">
+        <div class="preview pt-3 text-white flex justify-start relative">
+          <div class="flex content pl-4">
             <button
               class="close-btn absolute flex justify-center items-center focus:outline-none right-0 mt-5 mr-1 w-5 h-5"
             >
