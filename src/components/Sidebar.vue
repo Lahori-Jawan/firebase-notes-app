@@ -6,7 +6,7 @@
       <p class="text-white text-bold text-center mt-20 title-1">nk</p>
       <p class="text-center mt-10">
         <button
-          class="rounded-lg hover:border-transparent hover:text-red-500 focus:outline-none focus:shadow-lg text-white w-20 h-20 transition duration-500 title-1 outline-blue"
+          class="rounded-lg hover:border-transparent hover:text-red-500 focus:outline-none focus:shadow-lg transform hover:rotate-45 text-white w-20 h-20 transition duration-500 title-1 outline-blue"
         >
           +
         </button>

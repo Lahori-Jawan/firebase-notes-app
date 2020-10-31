@@ -44,10 +44,6 @@
   border: 2px solid #2b0080;
 }
 
-.outline-blue:hover {
-  transform: rotate(45deg);
-}
-
 .close-btn {
   background: #4444447d;
   border-radius: 50%;
