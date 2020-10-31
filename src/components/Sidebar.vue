@@ -13,6 +13,12 @@
       </p>
       <div class="notes-list mt-2">
         <div class="preview pt-3 text-white flex justify-start relative">
+          <input
+            class="w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-16"
+            id="username"
+            type="text"
+            placeholder="Username"
+          />
           <div class="flex content pl-4">
             <button
               class="close-btn absolute flex justify-center items-center focus:outline-none right-0 mt-5 mr-1 w-5 h-5"
