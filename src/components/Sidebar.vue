@@ -15,7 +15,7 @@
       </p>
       <div class="notes-list mt-2">
         <div
-          class="preview pt-3 text-white flex justify-start relative"
+          class="preview pt-3 text-white flex flex-col relative"
           v-for="note in notes"
           :key="note.id"
         >
