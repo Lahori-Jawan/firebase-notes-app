@@ -77,6 +77,11 @@
   margin-right: 0.35rem;
 }
 
+.bookmark.active {
+  opacity: 1;
+  color: yellow;
+}
+
 .preview:hover .bookmark,
 .preview:hover .close-btn {
   opacity: 1;

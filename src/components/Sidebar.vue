@@ -6,20 +6,27 @@
       <p class="text-white text-bold text-center mt-20 title-1">nk</p>
       <p class="text-center mt-10">
         <button
-          class="rounded-lg hover:border-transparent hover:text-red-500 focus:outline-none focus:shadow-lg transform hover:rotate-45 text-white w-20 h-20 transition duration-500 title-1 outline-blue"
+          class="rounded-lg hover:border-transparent focus:outline-none focus:shadow-lg transform text-white w-20 h-20 transition duration-500 title-1 outline-blue"
+          :class="{ 'hover:text-red-500 hover:rotate-45': editing }"
+          @click="addNote"
         >
           +
         </button>
       </p>
       <div class="notes-list mt-2">
-        <div class="preview pt-3 text-white flex justify-start relative">
+        <div
+          class="preview pt-3 text-white flex justify-start relative"
+          v-for="note in notes"
+          :key="note.id"
+        >
           <input
             class="w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-16"
             id="username"
             type="text"
             placeholder="Username"
+            v-show="editing"
           />
-          <div class="flex content pl-4">
+          <div class="flex content pl-4" v-show="!editing">
             <button
               class="close-btn absolute flex justify-center items-center focus:outline-none right-0 mt-5 mr-1 w-5 h-5"
             >
@@ -41,14 +48,15 @@
             </button>
             <div
               class="bookmark color absolute flex justify-center items-center right-0 mr-1 w-4 h-4"
+              :class="{ active: note.bookmark }"
             ></div>
             <div class="info flex flex-col">
-              <span class="date title-2">{{ date.getDate() }}</span>
-              <span class="month">{{ date.getMonth() }}</span>
+              <span class="date title-2">{{ note.date }}</span>
+              <span class="month">{{ note.month }}</span>
             </div>
             <div class="flex flex-col justify-center pl-3 content">
-              <div class="font-bold">My Awesome Title</div>
-              <p class="text-gray-500">Double click to edit</p>
+              <div class="font-bold">{{ note.title }}</div>
+              <p class="text-gray-500">{{ note.content }}</p>
             </div>
           </div>
         </div>
@@ -61,8 +69,23 @@
 export default {
   data() {
     return {
-      date: new Date()
+      date: new Date(),
+      editing: 0,
+      notes: []
     };
+  },
+  methods: {
+    addNote() {
+      console.log('add');
+      this.notes.push({
+        id: this.notes.length,
+        title: 'My Awesome Title',
+        content: 'Double click to edit',
+        bookmark: false,
+        date: this.date.getDate(),
+        month: 'October'
+      });
+    }
   }
 };
 </script>
