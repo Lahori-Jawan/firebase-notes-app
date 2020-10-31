@@ -65,10 +65,9 @@
   color: inherit;
   position: absolute;
   border-top: 7px solid;
-  border-bottom: 7px solid;
   border-left: 7px solid;
-  border-right: 7px solid transparent;
-  transform: rotateZ(90deg);
+  border-right: 7px solid;
+  border-bottom: 7px solid transparent;
   cursor: pointer;
 }
 
