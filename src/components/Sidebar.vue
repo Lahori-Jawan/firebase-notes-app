@@ -7,8 +7,8 @@
       <p class="text-center mt-10">
         <button
           class="rounded-lg hover:border-transparent focus:outline-none focus:shadow-lg transform text-white w-20 h-20 transition duration-500 title-1 outline-blue"
-          :class="{ 'hover:text-red-500 hover:rotate-45': editing }"
-          @click="addNote"
+          :class="{ 'text-red-500 rotate-45': editing }"
+          v-on="{ click: editing ? removeNote : addNote }"
         >
           +
         </button>
@@ -26,12 +26,9 @@
             placeholder="Username"
             v-show="editing == note.id"
             @keypress.enter="editing = 0"
+            v-model="note.title"
           />
-          <div
-            class="flex content pl-4"
-            @dblclick="editing = note.id"
-            v-show="!editing"
-          >
+          <div class="flex content pl-4" @dblclick="editing = note.id">
             <button
               class="close-btn absolute flex justify-center items-center focus:outline-none right-0 mt-5 mr-1 w-5 h-5"
               @click="removeNote(note.id)"
@@ -61,7 +58,7 @@
               <span class="date title-2">{{ note.date }}</span>
               <span class="month">{{ note.month }}</span>
             </div>
-            <div class="flex flex-col justify-center pl-3 content">
+            <div class="flex flex-col justify-center pl-2 content">
               <div class="font-bold">{{ note.title }}</div>
               <p class="text-gray-500">{{ note.content }}</p>
             </div>
@@ -95,8 +92,10 @@ export default {
       });
     },
     removeNote(id) {
-      const index = this.notes.findIndex(note => note.id == id);
+      const noteId = id || this.editing;
+      const index = this.notes.findIndex(note => note.id == noteId);
       this.notes.splice(index, 1);
+      this.editing = 0;
     }
   }
 };
