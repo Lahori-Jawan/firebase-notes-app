@@ -1,0 +1,88 @@
+/* @tailwind base;
+
+@tailwind components;
+
+@tailwind utilities; */
+
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+.title-1 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+
+.title-2 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 4.5rem;
+}
+
+.sidebar-bg {
+  background: #673ab7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #512da8,
+    #673ab7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #512da8,
+    #673ab7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.outline-blue {
+  border: 1px solid #2b00805d;
+}
+
+.outline-blue:active {
+  border: 2px solid #2b0080;
+}
+
+.outline-blue:hover {
+  transform: rotate(45deg);
+}
+
+.close-btn {
+  background: #4444447d;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.close-btn > svg {
+  z-index: 999;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.75rem;
+  color: #f3f3f3;
+}
+
+.preview:hover .bookmark::after,
+.bookmark.color::after {
+  content: '';
+  color: inherit;
+  position: absolute;
+  border-top: 7px solid;
+  border-bottom: 7px solid;
+  border-left: 7px solid;
+  border-right: 7px solid transparent;
+  transform: rotateZ(90deg);
+  cursor: pointer;
+}
+
+.bookmark {
+  opacity: 0;
+  color: #fff;
+  margin-right: 0.35rem;
+}
+
+.preview:hover .bookmark,
+.preview:hover .close-btn {
+  opacity: 1;
+}
