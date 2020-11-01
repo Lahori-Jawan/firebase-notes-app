@@ -14,7 +14,7 @@
         </button>
       </p>
       <!-- <div class="notes-list mt-2"> -->
-      <transition-group name="notes" tag="div">
+      <transition-group name="notes" tag="div" class="notes-list mt-2">
         <Note
           class="note"
           v-for="note in notes"
