@@ -1,5 +1,5 @@
 <template>
-  <div class="preview pt-3 text-white flex flex-col relative">
+  <div class="preview pt-3 text-white flex flex-col">
     <input
       class="absolute w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-16"
       id="username"

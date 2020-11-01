@@ -13,8 +13,10 @@
           +
         </button>
       </p>
-      <div class="notes-list mt-2">
+      <!-- <div class="notes-list mt-2"> -->
+      <transition-group name="notes" tag="div">
         <Note
+          class="note"
           v-for="note in notes"
           :key="note.id"
           :editing="editing"
@@ -25,7 +27,8 @@
           @toggle-bookmark="note.bookmark = !note.bookmark"
           @remove-note="removeNote"
         />
-      </div>
+      </transition-group>
+      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -66,4 +69,33 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+/* Transition */
+
+.note {
+  transition: all 0.5s;
+}
+
+.notes-leave-active {
+  position: absolute;
+}
+
+.notes-enter {
+  opacity: 0;
+  transform: translateX(-150px);
+}
+
+.notes-enter-to {
+  transform: translateX(0);
+}
+
+.notes-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.notes-move {
+  /* position: relative; */
+  transition: all 400ms ease-in-out;
+}
+</style>
