@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="app"
-    class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-indigo"
-  >
+  <div id="app" class="md:flex flex-col md:flex-row md:min-h-screen w-full">
     <Sidebar />
   </div>
 </template>
