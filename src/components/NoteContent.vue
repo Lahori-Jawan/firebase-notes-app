@@ -1,7 +1,7 @@
 <template>
   <div class="flex-grow px-6 py-6">
     <textarea
-      class="w-full h-full resize-none border rounded focus:outline-none focus:shadow-outline"
+      class="w-full h-full resize-none border rounded focus:outline-none focus:shadow-outline p-4"
     ></textarea>
   </div>
 </template>
