@@ -13,10 +13,11 @@
       class="flex content pl-4"
       :class="{ hide: editing === note.id }"
       @dblclick="$emit('editing', note.id)"
+      @click="$store.commit('SET_ACTIVE_NOTE', note)"
     >
       <button
         class="close-btn absolute flex justify-center items-center focus:outline-none right-0 mt-5 mr-1 w-5 h-5"
-        @click="$emit('remove-note', note.id)"
+        @click.stop="$emit('remove-note', note.id)"
       >
         <svg
           aria-hidden="true"
@@ -37,7 +38,7 @@
       <div
         class="bookmark color absolute flex justify-center items-center right-0 mr-1 w-4 h-4"
         :class="{ active: note.bookmark }"
-        @click="$emit('toggle-bookmark', note.id)"
+        @click.stop="$emit('toggle-bookmark', note.id)"
       ></div>
       <div class="info flex flex-col">
         <span class="date title-2">{{ note.date }}</span>
@@ -45,7 +46,7 @@
       </div>
       <div class="flex flex-col justify-center pl-2 content">
         <div class="font-bold">{{ note.title }}</div>
-        <p class="text-gray-500">{{ note.content }}</p>
+        <p class="text-gray-500 truncate">{{ note.content }}</p>
       </div>
     </div>
   </div>
