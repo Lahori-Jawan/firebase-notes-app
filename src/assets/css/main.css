@@ -94,3 +94,10 @@
 .hide {
   visibility: hidden;
 }
+
+.truncate {
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
